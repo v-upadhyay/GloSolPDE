@@ -1,30 +1,30 @@
 #=
 ############################################################################################
-	Robust Optimal Control for Linear Systems with Terminal Constraints
-	<main.jl>
-	© vaibhav.u@iitb.ac.in
+Robust Optimal Control for Linear Systems with Terminal Constraints
+<main.jl>
+© vaibhav.u@iitb.ac.in
 
-	This piece of code is written for generating near optimal solutions 
-   to Robust Optimal Control Problem for Linear Systems in continuous 
-   time regime only with terminal constraints. Extensions to be written
-   later for intermediate constraints.
+This piece of code is written for generating near optimal solutions 
+to Robust Optimal Control Problem for Linear Systems in continuous 
+time regime only with terminal constraints. Extensions to be written
+later for intermediate constraints.
 
-	At the moment this file is accompanied by 
-	1. main.jl containing the simulated anneling driven maximization over 
+At the moment this file is accompanied by 
+   1. main.jl containing the simulated anneling driven maximization over 
       the uncertainty set.
-	2. internal_minimization.jl containing the minimization of cost function over the control
-      variables for given samples of uncertainty.
-   3. constraints.jl containing the constraints for the internal_minimization 
-      optimization problem (control, slack & dynamics constraints).
-   4. objective_function.jl containing the cost function for the internal_minimization.
-   5. parameters.jl containing the system matrices for the linear system based on given 
-      parameters and boundary conditions.
-   6. analysis.jl containing the verification tools for the validity of the solution through
-      trajectory visualization in the nominal case (zeros disturbance).
+   2. internal_minimization.jl containing the minimization of cost func-
+      -tion over the control variables for given samples of uncertainty.
+   3. constraints.jl containing the constraints for the internal_minimi-
+      -zation optimization problem (control, slack & dynamics).
+   4. objective_function.jl containing the cost function for the intern-
+      -al_minimization.
+   5. parameters.jl containing the system matrices for the linear system
+      based on given parameters and boundary conditions.
+   6. analysis.jl containing the verification tools for the validity of 
+      the solution through trajectory visualization.
 
-	This piece of code works in all moderately high dimensional systems: BELOW dim 100.
-	The code is semi-optimized; full-scale optimization of the code should be
-	done later.
+This piece of code works in all moderately high dimensional systems: BELOW dim 100.
+The code is semi-optimized; full-scale optimization of the code should be done later.
 ############################################################################################
 =#
 
