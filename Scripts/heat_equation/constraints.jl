@@ -31,12 +31,13 @@ end
 function slack_constraint(model, control, slack, displacement, uncert, dT)
     
     lambda = 0.01
+    gamma = 50.0
     # terminal_distribution = [10 * exp(-(x - 0.8)^2) for x in 1:discrete_points]
     terminal_distribution = [0 for x in 1:discrete_points]
     for i in 1:num_samples
     
         displacement_error = displacement[:, i] - terminal_distribution
-        @constraint(model, lambda * sum(control.^2) + 0.5 * sum(displacement[:, i].^2) - 10 * sum(uncert[i,:,:].^2) <=  slack)
+        @constraint(model, lambda * sum(control.^2) + 0.5 * sum(displacement[:, i].^2) - gamma * sum(uncert[i,:,:].^2) <=  slack)
 
     end
     @constraint(model, slack <= 5)
