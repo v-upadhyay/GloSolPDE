@@ -5,18 +5,19 @@
 	© vaibhav.u@iitb.ac.in
 
 	This piece of code is written for generating near optimal solutions 
-   to Robust Optimal Control Problem for Linear Systems in continuous 
-   time regime only with terminal constraints. Extensions to be written
-   later for intermediate constraints.
+	to Robust Optimal Control Problem for Linear Systems in continuous 
+	time regime only with terminal constraints. Extensions to be written
+	later for intermediate constraints.
 
-	At the moment this file is accompanied by 
+	At the moment this file is accompanied by:
 	1. main.jl containing the simulated anneling driven maximization over 
-      the uncertainty set.
+	the uncertainty set.
 	2. internal_minimization.jl containing the minimization of cost function over the control
-      variables for given samples of uncertainty.
-   3. constraints.jl containing the constraints for the internal_minimization 
-      optimization problem (control, slack & dynamics constraints).
-   4. objective_function.jl containing the cost function for the internal_minimization.
+	variables for given samples of uncertainty.
+	3. constraints.jl containing the constraints for the internal_minimization 
+	optimization problem (control, slack & dynamics constraints).
+	4. objective_function.jl containing the cost function for the internal_minimization.
+	5. system.jl containing the system matrix data.
 
 	This piece of code works in all moderately high dimensional systems: BELOW dim 100.
 	The code is semi-optimized; full-scale optimization of the code should be
