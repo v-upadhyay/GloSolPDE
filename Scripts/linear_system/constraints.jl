@@ -21,7 +21,7 @@ function slack_constraint(model, terminal_state, lambda, gamma, control, slack, 
     for i in 1:num_samples
     
         states_sampled_error = states_sampled[:, i] - terminal_state
-        @constraint(model, lambda * sum(control.^2) + 0.5 * sum(states_sampled[:, i].^2) - gamma * sum(uncert[i,:,:].^2) <=  slack)
+        @constraint(model, lambda * sum(control.^2) + 0.5 * sum(states_sampled_error.^2) - gamma * sum(uncert[i,:,:].^2) <=  slack)
 
     end
 end
