@@ -1,1 +1,1 @@
-# Optimal-Control-of-Parabolic-PDEs
+# Constrained minmax density steering for parabolic PDEs
