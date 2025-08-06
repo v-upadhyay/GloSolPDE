@@ -29,7 +29,7 @@ The problem is formulated as a **min-max optimal control** problem:
 
 ---
 
-## Tunable parameters
+## Tunable Parameters
 
 You can modify the following parameters in 'main.jl' to experiment with the problem setup:
 | Parameter                                            | Description                                                                   |
@@ -42,7 +42,6 @@ You can modify the following parameters in 'main.jl' to experiment with the prob
 | `gamma`                                              | Weight on the disturbance impact in the cost functional.                      |
 | `control_bounds`                                     | Lower and upper bounds on the boundary control input.                         |
 | `num_params`                                         | Number of basis functions to parameterize the disturbance.                    |
-| `num_samples`                                        | Number of disturbance time samples; set to `num_params + 1`.                  |
 | `disturbance_upper_bound`, `disturbance_lower_bound` | Range of allowed disturbance magnitude.                                       |
 | `MaxSteps` (in `bboptimize`)                         | Number of iterations for the differential evolution maximization.             |
 | `time_period`                                        | Period for the disturbance parameterization; affects frequency resolution.    |
