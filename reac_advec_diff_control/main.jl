@@ -159,9 +159,6 @@ end
 
 
 
-N_sample = [100]
+N_grid = 50
 
-for N in N_sample
-    println("Running for N = $N")
-    optimal_control(N)
-end
+optimal_control(N_grid)
