@@ -1,1 +1,51 @@
 # Constrained minmax density steering for parabolic PDEs
+
+This repository contains a Julia implementation for solving a **robust optimal control problem** for a **1D parabolic partial differential equation (PDE)**. The setup models a boundary-controlled diffusion system with bounded uncertainties, optimized over a finite time horizon using a bilevel optimization structure.
+
+---
+
+## Problem Structure
+
+The problem is formulated as a **min-max optimal control** problem:
+- **Minimization (inner loop):** Optimal control minimizing a cost functional (using Ipopt via JuMP).
+- **Maximization (outer loop):** Worst-case disturbance selected via global optimization (Differential Evolution using `BlackBoxOptim.jl`).
+- **Uncertainty Set Constraint:** Projected onto a constrained set using a custom projection routine.
+
+---
+
+## File Overview
+
+| File                        | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| `main.jl`                  | Entry point that runs the full optimization. Performs bilevel optimization. |
+| `system.jl`                | Defines the **state** and **control matrices** from PDE discretization.     |
+| `objective_function.jl`    | Contains the cost functional evaluated during inner minimization.           |
+| `constraints.jl`           | Defines constraints for the inner control optimization.                     |
+| `internal_minimization.jl`| Solves the **inner minimization** using Ipopt for a fixed uncertainty.       |
+| `uncert_projection.jl`     | Projects uncertainty samples onto a constrained set.                        |
+| `cost_matrix_generator.jl` | Generates the **Q matrix** for continuous-time control cost integration.     |
+| `visual_control.jl`        | Plots the boundary control trajectory over time.                            |
+| `visual_state.jl`          | Plots the spatiotemporal state density evolution.                           |
+
+---
+
+## How to Run
+
+### 1. Install Dependencies
+
+Ensure the following Julia packages are installed:
+
+```julia
+using Pkg
+Pkg.add([
+  "JuMP", 
+  "Ipopt", 
+  "CairoMakie", 
+  "LinearAlgebra", 
+  "StaticArrays", 
+  "Dates", 
+  "Serialization", 
+  "Optim", 
+  "Random", 
+  "BlackBoxOptim"
+])
