@@ -52,19 +52,6 @@ Ensure the following Julia packages are installed:
 
 ```julia
 using Pkg
-Pkg.add([
-  "JuMP", 
-  "Ipopt", 
-  "CairoMakie",
-  "GLMakie", 
-  "LinearAlgebra", 
-  "StaticArrays", 
-  "Dates", 
-  "Serialization", 
-  "Optim", 
-  "Random", 
-  "BlackBoxOptim",
-  "Colors",
-  "QuadGK"
-])
+Pkg.add(["JuMP", "Ipopt", "CairoMakie", "GLMakie", "LinearAlgebra", "StaticArrays", "Dates", "Serialization", "Optim", "Random", "BlackBoxOptim", "Colors", "QuadGK"])
+
 
