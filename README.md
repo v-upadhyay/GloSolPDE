@@ -29,6 +29,25 @@ The problem is formulated as a **min-max optimal control** problem:
 
 ---
 
+## Tunable parameters
+
+You can modify the following parameters in 'main.jl' to experiment with the problem setup:
+| Parameter                                            | Description                                                                   |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `N`                                                  | Number of spatial grid points for PDE discretization.                         |
+| `terminal_time`                                      | Time horizon for control; determines the time interval $[0, T]$.              |
+| `initial_modes`                                      | Number of spatial modes in the initial state; adjusts smoothness/oscillation. |
+| `initial_state`, `terminal_state`                    | Custom initial and target state profiles for the PDE.                         |
+| `lambda`                                             | Weight on the control effort in the cost functional.                          |
+| `gamma`                                              | Weight on the disturbance impact in the cost functional.                      |
+| `control_bounds`                                     | Lower and upper bounds on the boundary control input.                         |
+| `num_params`                                         | Number of basis functions to parameterize the disturbance.                    |
+| `num_samples`                                        | Number of disturbance time samples; set to `num_params + 1`.                  |
+| `disturbance_upper_bound`, `disturbance_lower_bound` | Range of allowed disturbance magnitude.                                       |
+| `MaxSteps` (in `bboptimize`)                         | Number of iterations for the differential evolution maximization.             |
+| `time_period`                                        | Period for the disturbance parameterization; affects frequency resolution.    |
+
+
 ## How to Run
 
 ### 1. Install Dependencies
@@ -49,3 +68,4 @@ Pkg.add([
   "Random", 
   "BlackBoxOptim"
 ])
+
