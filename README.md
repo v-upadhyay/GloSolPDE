@@ -4,6 +4,26 @@ This repository contains a Julia implementation for solving a **robust optimal c
 
 ---
 
+## Repository Structure
+
+This repository contains three different problem setups, each organized into a separate folder:
+
+- `diff_dist_control/`  
+  Solves a **robust optimal control** problem for the **heat equation**, transferring a **non-zero initial distribution** to a **prescribed non-zero terminal distribution**.
+
+- `dist_null_control/`  
+  Solves a **robust null control** problem for the **heat equation**, transferring a **non-zero initial distribution** to the **zero (null) distribution**.
+
+- `reac_advec_diff_control/`  
+  Solves a **robust optimal control** problem for the **reaction-advection-diffusion equation**, transferring a **non-zero initial density** to the **null distribution** under more general PDE dynamics.
+
+Each folder contains a `main.jl` along with its supporting files (system matrices, cost, minimization/maximization logic, and visualization scripts).
+
+---
+
+
+---
+
 ## Problem Structure
 
 The problem is formulated as a **min-max optimal control** problem:
