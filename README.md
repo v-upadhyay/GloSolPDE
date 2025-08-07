@@ -19,8 +19,6 @@ This repository contains three different problem setups, each organized into a s
 
 Each folder contains a `main.jl` along with its supporting files (system matrices, cost, minimization/maximization logic, and visualization scripts).
 
----
-
 
 ---
 
