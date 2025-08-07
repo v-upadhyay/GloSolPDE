@@ -1,4 +1,4 @@
-# Constrained minmax density transportation for parabolic PDEs: a direct optimal control perspective
+# Constrained minmax density transportation for parabolic PDEs: A direct optimal control perspective
 **Authors: Vaibhav Upadhyay, Siddhartha Ganguly, Kenji Kashima, Debasish Chatterjee**
 
 This repository contains a Julia implementation for solving a **robust optimal control problem** for a **1D parabolic partial differential equation (PDE)**. The setup models a boundary-controlled diffusion system with bounded uncertainties, optimized over a finite time horizon using a bilevel optimization structure.
