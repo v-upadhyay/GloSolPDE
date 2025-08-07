@@ -64,6 +64,8 @@ You can modify the following parameters in 'main.jl' to experiment with the prob
 | `MaxSteps` (in `bboptimize`)                         | Number of iterations for the differential evolution maximization.             |
 | `time_period`                                        | Period for the disturbance parameterization; affects frequency resolution.    |
 
+---
+
 ### Install Dependencies
 
 Ensure the following Julia packages are installed:
